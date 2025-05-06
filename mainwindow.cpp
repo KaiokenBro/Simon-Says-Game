@@ -17,7 +17,7 @@
 
 using std::max;
 
-MainWindow::MainWindow(Model* model, QWidget *parent) :
+MainWindow::MainWindow(Model* model, QWidget* parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
@@ -34,8 +34,8 @@ MainWindow::MainWindow(Model* model, QWidget *parent) :
     redButtonAudio->setAudioOutput(redAudioOutput);
 
     // Set the volume of the audio (range is 0 to 100)
-    redAudioOutput->setVolume(50);
-    blueAudioOutput->setVolume(40);
+    redAudioOutput->setVolume(100);
+    blueAudioOutput->setVolume(10);
 
     // Double playback rate to make button sounds quick and responsive
     redButtonAudio->setPlaybackRate(2.0);
@@ -55,69 +55,70 @@ MainWindow::MainWindow(Model* model, QWidget *parent) :
     connect(ui->startButton,
             &QPushButton::clicked,
             model,
-            &Model::startGame);
-
+            &Model::startGame
+    );
 
     // Shows game buttons when the Start button is clicked
     connect(ui->startButton,
             &QPushButton::clicked,
             this,
-            &MainWindow::showGameButtons);
+            &MainWindow::showGameButtons
+    );
 
     // Hide start button and welcome label when the Start button is clicked
     connect(ui->startButton,
             &QPushButton::clicked,
             this,
-            &MainWindow::hideGameButtons);
+            &MainWindow::hideGameButtons
+    );
 
     // Enable or disable game buttons based on turn
     connect(model,
             &Model::playerTurnSignal,
             this,
-            &MainWindow::updateGameButtonState);
+            &MainWindow::updateGameButtonState
+    );
 
     // Flashes the appropriate button during the computer's sequence
     connect(model,
             &Model::playMoveSignal,
             this,
-            &MainWindow::flashButton);
+            &MainWindow::flashButton
+    );
 
     // Player input — clicking red button sends a signal to the model
     connect(ui->redButton,
             &QPushButton::clicked,
             this,
-            &MainWindow::onRedButtonClicked);
+            &MainWindow::onRedButtonClicked
+    );
 
     // Player input — clicking blue button sends a signal to the model
     connect(ui->blueButton,
             &QPushButton::clicked,
             this,
-            &MainWindow::onBlueButtonClicked);
+            &MainWindow::onBlueButtonClicked
+    );
 
-    /**
-     * @brief SOURCE USED:
-     * https://doc.qt.io/qt-6/signalsandslots.html.
-     * Used this source to find a way to connect signals to slots from view to model without
-     * having them knowing anything about each other preserving Model-View Architecture
-     * plus finding a way to give parameters to each other.
-     * Used the emitted buttonPressed to nofify the model.
-     */
     connect(this,
             &MainWindow::buttonPressed,
             model,
-            &Model::handlePlayerTurn);
+            &Model::handlePlayerTurn
+    );
 
     // Updates progress bar as the player progresses
     connect(model,
             &Model::progressUpdated,
             this,
-            &MainWindow::setProgressBar);
+            &MainWindow::setProgressBar
+    );
 
     // Disables all UI elements after the game ends
     connect(model,
             &Model::gameOver,
             this,
-            &MainWindow::onGameOver);
+            &MainWindow::onGameOver
+    );
 
 }
 
@@ -135,7 +136,9 @@ void MainWindow::flashButton(int buttonID, int speedFactor) {
     // Play the corresponding button sound
     if (buttonID == 0) {
         redButtonAudio->play();
-    } else if (buttonID == 1) {
+    }
+
+    else if (buttonID == 1) {
         blueButtonAudio->play();
     }
 

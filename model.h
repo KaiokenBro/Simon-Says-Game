@@ -37,7 +37,7 @@ public:
      *
      * @param parent A pointer to the parent QObject (default is nullptr).
      */
-    explicit Model(QObject *parent = nullptr);
+    explicit Model(QObject* parent = nullptr);
 
 private:
 
