@@ -16,20 +16,6 @@ Built using C++ and the Qt framework, this project showcases a Model-View-Contro
 - QMake: Build system (Simon-Says.pro project file)
 - WAV Audio Files: For button sound effects
 
-## 📁 Project Structure
-```bash
-Simon-Says/
-├── build/                          # Build directory for compiled binaries
-├── blueButtonSound.wav             # Sound for blue button
-├── redButtonSound.wav              # Sound for red button
-├── main.cpp                        # Application entry point
-├── mainwindow.cpp/.h/.ui           # Main window implementation and UI layout
-├── model.cpp/.h                    # Game logic and state management
-├── resources.qrc                   # Qt resource file for bundling assets
-├── Simon-Says.pro                  # QMake project file
-└── .gitignore                      # Git ignore file
-```
-
 ## 🚀 Getting Started
 **Prerequisites**
 - Qt Creator 6.8.2 installed on your system
