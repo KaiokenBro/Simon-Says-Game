@@ -1,6 +1,5 @@
 /**
  * @file main.cpp
- * @authors Victor Valdez Landa, Harrison Doppelt
  * @date 03/13/2025
  */
 

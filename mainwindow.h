@@ -3,8 +3,6 @@
 
 /**
  * @file mainwindow.h
- * @authors Victor Valdez Landa, Harrison Doppelt
- *
  * @brief This file defines the MainWindow class, which manages the game's user interface.
  *
  * It handles button clicks, updates the game state based on player input,

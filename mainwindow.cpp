@@ -1,7 +1,5 @@
 /**
  * @file mainwindow.cpp
- * @authors Victor Valdez Landa, Harrison Doppelt
- *
  * @brief This file defines the implementation of the MainWindow class, which manages the game's user interface.
  *
  * It handles user interaction, sound effects, and updates the game state based on player input.

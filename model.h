@@ -3,8 +3,6 @@
 
 /**
  * @file model.h
- * @authors Victor Valdez Landa, Harrison Doppelt
- *
  * @brief This file defines the Model class, which handles the core game logic for the Simon game.
  *
  * It manages the sequence of moves, player input, and game state transitions.

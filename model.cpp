@@ -1,7 +1,5 @@
 /**
  * @file model.cpp
- * @authors Victor Valdez Landa, Harrison Doppelt
- *
  * @brief This file defines the implementation of the Model class, which manages the game's core logic.
  *
  * It handles generating the sequence, tracking player input, and controlling the game state.
